@@ -1,16 +1,11 @@
-var colors = [
-  "rgb(255, 0, 0)", 
-  "rgb(255, 255, 0)",
-  "rgb(0, 255, 255)",
-  "rgb(0, 0, 255)",
-  "rgb(255, 0, 255)",
-  "rgb(0, 255, 0)" ]
+var colors = generateRandomColors(6)
+  
 
-  var squares = document.querySelectorAll(".square");
-  var pickedColor= pickColor();
-  var colorDisplay = document.getElementById("colorDisplay");
-  var messageDisplay = document.querySelector("#message");
-  var h1 = document.querySelector("h1");
+ var squares = document.querySelectorAll(".square");
+ var pickedColor= pickColor();
+ var colorDisplay = document.getElementById("colorDisplay");
+ var messageDisplay = document.querySelector("#message");
+ var h1 = document.querySelector("h1");
 
   colorDisplay.textContent = pickedColor;
 
@@ -23,6 +18,7 @@ var colors = [
   		//grab color of cliked square
   		var clickedColor = this.style.background;
   		// compare color to pickedColor
+  		console.log(clickedColor, pickedColor);
   		if(clickedColor === pickedColor){
   			messageDisplay.textContent = "Correct";
   			changeColors(clickedColor);
@@ -54,7 +50,7 @@ var colors = [
   	//make an array
   	var arr = []
   	//add num random color to array
-  	for(var i = 0; i < num; i++){
+  	for (var i = 0; i < num; i++){
   	  	//get random color and push into arr
 		arr.push(randomColor())
 }
